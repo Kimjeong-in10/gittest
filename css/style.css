@@ -1,0 +1,526 @@
+@charset "UTF-8";
+:root {
+  --primary-color: #18d26e;
+}
+/* common ui */
+/* button style */
+.button {
+  display: inline-block;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  height: 32px;
+  line-height: 32px;
+  padding: 8px 32px;
+  border-radius: 24px;
+  background-color: var(--primary-color);
+  text-shadow: none;
+}
+.button:hover {
+  color: var(--primary-color);
+  background-color: white;
+}
+/* .progressbar style */
+.progressbar .itemsWrap {
+  overflow: hidden;
+  color: white;
+  margin-bottom: 15px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.progressbar .itemsWrap:last-child {
+  margin-bottom: 0;
+}
+.progressbar .itemsWrap .item {
+  overflow: hidden;
+  padding: 6px 10px;
+  border-radius: 0 5px 5px 0;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  width: 0;
+  height: 45px;
+  line-height: 45px;
+  transition-duration: 0.5s;
+}
+.progressbar .itemsWrap .item .title {
+  float: left;
+  font-weight: 700;
+  padding: 6px 0;
+}
+.progressbar .itemsWrap .item .percent {
+  float: right;
+  padding: 6px 0;
+}
+.progressbar .itemsWrap:nth-of-type(1) .item {
+  background-color: #ebaf17;
+}
+.progressbar .itemsWrap:nth-of-type(2) .item {
+  background-color: #edd118;
+}
+.progressbar .itemsWrap:nth-of-type(3) .item {
+  background-color: #dfed18;
+}
+.progressbar .itemsWrap:nth-of-type(4) .item {
+  background-color: #abeb17;
+}
+
+.go-to-top {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  right: 10px;
+  bottom: 10px;
+  background-color: black;
+  z-index: 800;
+  border-radius: 50%;
+  opacity: 0;
+  transition: 1s;
+}
+.go-to-top.on {
+  opacity: 1;
+}
+
+.go-to-top a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.go-to-top svg {
+  fill: white;
+  width: 24px;
+  height: 24px;
+}
+
+/* mobile button style */
+input[type="checkbox"]#gnbcheck {
+  display: none;
+}
+#gnbbtn {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  z-index: 700;
+}
+#gnbbtn span {
+  position: absolute;
+  top: 16px;
+  width: 32px;
+  height: 1.6px;
+  transform: translateY(-50%);
+  background-color: white;
+  transition: 0.5s ease-in-out;
+}
+#gnbbtn span:first-child {
+  top: 8px;
+}
+#gnbbtn span:last-child {
+  top: 24px;
+}
+/* mobile button style 끝 */
+
+/* header area */
+#header {
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+  top: 0;
+  z-index: 800;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* top logo area  */
+#top-logo {
+  float: left;
+}
+
+#top-logo a {
+  font-size: 24px;
+  color: white;
+  line-height: 60px;
+  height: 60px;
+  padding: 0 20px;
+  text-transform: uppercase;
+}
+
+/* gnb area  */
+#gnb {
+  float: right;
+}
+
+#gnb ul {
+  overflow: hidden;
+}
+
+#gnb ul li {
+  float: left;
+}
+
+#gnb ul li a {
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 15px;
+}
+
+/* section area  */
+section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: white;
+  box-sizing: border-box;
+}
+section:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+/* intro area */
+section#intro {
+  background-image: url(../img/intro/3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* myprofile area */
+section#myprofile {
+  background-image: url(../img/bg/about_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+section#myprofile:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.92);
+}
+section.active .row .column {
+  transform: scale(1);
+}
+section#myprofile .row .column .inner .job {
+  color: #999;
+  font-size: 14px;
+}
+section#myprofile .row .column .inner img {
+  width: 20%;
+  border-radius: 50%;
+}
+section#portfolio .row .column .inner p {
+  text-align: left;
+}
+/* myskill area */
+section#myskill {
+  background-image: url(../img/bg/my_skill_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+section#myskill .row > h2,
+section#myskill .row .column .inner > p {
+  color: white;
+}
+section#myskill.active
+  .row
+  .column
+  .inner.progressbar
+  .itemsWrap:nth-of-type(1)
+  .item {
+  width: 50%;
+  transition-delay: 0.25s;
+}
+section#myskill.active
+  .row
+  .column
+  .inner.progressbar
+  .itemsWrap:nth-of-type(2)
+  .item {
+  width: 80%;
+  transition-delay: 0.5s;
+}
+section#myskill.active
+  .row
+  .column
+  .inner.progressbar
+  .itemsWrap:nth-of-type(3)
+  .item {
+  width: 70%;
+  transition-delay: 0.75s;
+}
+section .row .column {
+  flex: 25%;
+  transform: scale(0);
+  transition: 0.5s;
+}
+section#myskill.active
+  .row
+  .column
+  .inner.progressbar
+  .itemsWrap:nth-of-type(4)
+  .item {
+  width: 60%;
+  transition-delay: 1s;
+}
+
+section .row .column .inner img.shadow {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  border: 1px solid #f1f1f1;
+  transition: 1s;
+}
+section .row .column .inner.borderNoneType {
+  border: none;
+  box-shadow: none;
+  background: none;
+}
+section > article {
+  text-align: center;
+  padding: 0 20%;
+  color: white;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+}
+section > article > h2 {
+  font-size: 40px;
+}
+section > article > p {
+  font-size: 20px;
+}
+
+/* project area */
+section .row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* 넘치는 것은 밑으로 정렬한다. */
+  width: 1200px;
+  color: #333;
+  text-align: center;
+  padding: 120px 0; /* section의 타이틀 영역 */
+  box-sizing: border-box;
+}
+/* section .row title style */
+section .row > h2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  /* 타이틀 영역을 지정하기 위하여 (펼치는) right: 0; left: 0; */
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  text-transform: capitalize;
+}
+section .row > h2:before,
+section .row > h2:after {
+  content: "";
+  position: absolute;
+  display: block;
+}
+section .row > h2:before {
+  left: calc(50% - 60px);
+  width: 120px;
+  height: 1px;
+  background-color: #ddd;
+  bottom: 1px;
+}
+section .row > h2:after {
+  left: calc((50% - 20px));
+  width: 40px;
+  height: 3px;
+  background-color: var(--primary-color);
+  bottom: 0px;
+}
+/* section .row .column style */
+section .row .column {
+  flex: 25%; /* 4분할 */
+  /* flex-shrink: 1; flex-grow: 1; flex-basis: 25%; */
+}
+section .row .column .inner {
+  margin: 15px;
+  padding: 15px;
+  border: 1px solid #f1f1f1;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+section .row .column .inner img {
+  width: 100%;
+}
+
+/* footer area */
+#footer {
+  background-color: #000;
+  color: #fff;
+  font-size: 14px;
+}
+#footer .footerTop {
+  background-color: #111;
+  padding: 60px 0 30px;
+}
+#footer .container {
+  width: 1140px;
+  margin: 0 auto;
+}
+#footer > .container {
+  /* footer 하단 영역임. */
+  padding: 30px 0;
+  text-align: center;
+}
+#footer .container .row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#footer .container .row .column {
+  flex: 25%;
+  padding: 0 10px;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+}
+#footer .container .row .column.f-logo h3 {
+  font-size: 34px;
+  padding: 2px 0 2px 10px;
+  margin: 0 0 20px 0;
+  line-height: 1; /* 폰트 사이즈와 동일하게 */
+  font-weight: 700;
+  letter-spacing: 3px;
+  border-left: 4px solid var(--primary-color);
+  text-transform: uppercase;
+}
+#footer .container .row .column h4 {
+  position: relative;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #fff;
+  text-transform: uppercase;
+}
+#footer .container .row .column h4:after,
+#footer .container .row .column h4:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+}
+#footer .container .row .column h4:before {
+  right: 0;
+  background-color: #555;
+}
+#footer .container .row .column h4:after {
+  width: 60px;
+  background-color: var(--primary-color);
+}
+#footer .container .row .column ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #333;
+}
+#footer .container .row .column p {
+  line-height: 26px;
+}
+#footer .container .row .column.news input[type="search"] {
+  border: 0;
+  padding: 6px 8px;
+  width: 65%;
+  outline: none;
+  float: left;
+}
+#footer .container .row .column.news input[type="submit"] {
+  border: 0;
+  width: 35%;
+  padding: 6px 0;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  background-color: var(--primary-color);
+}
+/* footer area 끝 */
+
+/* 반응형 css */
+@media screen and (max-width: 1200px) {
+  section .row .column {
+    flex: 50%;
+  }
+  section#myprofile .row .column .inner img {
+    width: 30%;
+  }
+  #footer .container {
+    width: 100%;
+  }
+  #footer .container .row .column {
+    flex: 50%;
+  }
+}
+/* pad, tablet 767 +- 100 */
+@media screen and (max-width: 820px) {
+  section .row .column {
+    flex: 100%;
+  }
+  section#ourclient .row .column,
+  section#mytool .row .column {
+    flex: 50%;
+  }
+  #footer .container .row .column {
+    flex: 100%;
+  }
+  /* 햄버거버튼을 닫기버튼으로 바꾸는 css 코드 */
+  input[type="checkbox"]#gnbcheck:checked ~ #gnbbtn > span:nth-child(2) {
+    opacity: 0;
+    /* display: none; */
+  }
+  input[type="checkbox"]#gnbcheck:checked ~ #gnbbtn > span {
+    top: 50%; /* 부모요소의 높이가 32px이므로 16px과 같다 */
+  }
+  input[type="checkbox"]#gnbcheck:checked ~ #gnbbtn > span:first-child {
+    transform: translateY(-50%) rotate(45deg);
+  }
+  input[type="checkbox"]#gnbcheck:checked ~ #gnbbtn > span:last-child {
+    transform: translateY(-50%) rotate(-45deg);
+  }
+  #gnbbtn {
+    display: block;
+  }
+
+  /* mobile(pad, tablet) gnb */
+  #gnb {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: 0.5s ease-in-out;
+  }
+  #gnb ul {
+    padding-top: 50px;
+  }
+  #gnb ul li {
+    width: 100%;
+    /* float: none; */
+    padding-left: 10px;
+    box-sizing: border-box;
+  }
+  input[type="checkbox"]#gnbcheck:checked ~ #gnb {
+    left: 0;
+  }
+
+  #header {
+    position: absolute;
+  }
+}
+/* small moblie */
+@media screen and (max-width: 380px) {
+  section#ourclient .row .column,
+  section#mytool .row .column {
+    flex: 100%;
+  }
+}
